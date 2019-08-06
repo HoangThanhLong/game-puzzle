@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HI</title>
+</head>
+<style>
+    img{
+        width: 500px;
+        height: 120px;
+    }
+</style>
+<body>
+<img id = "cat1" src="img/cat1.jpg" alt = "cat1"  style="box-shadow: none" onclick="changeImage(1)"/></br>
+<img id = "cat2" src="img/cat2.jpg" alt = "cat2"  style="box-shadow: none" onclick="changeImage(2)"/></br>
+<img id = "cat3" src="img/cat3.jpg" alt = "cat3"  style="box-shadow: none" onclick="changeImage(3)"/></br>
+<img id = "cat4" src="img/cat4.jpg" alt = "cat4"  style="box-shadow: none" onclick="changeImage(4)"/></br>
+<img id = "cat5" src="img/cat5.jpg" alt = "cat5"  style="box-shadow: none" onclick="changeImage(5)"/></br>
+<script>
+    function changeImage(index) {
+        let img = document.getElementById("cat" + index);
+        if (img.alt === ("cat" + index)){
+            img.alt = "monkey" + index;
+        } else if (img.alt === ("monkey" + index)){
+            img.alt = "panda" + index;
+        } else  if (img.alt === ("panda" + index)){
+            img.alt = "cat" + index;
+        }
+        img.src = "img/" + img.alt + ".jpg";
+        check();
+    }
+    function check() {
+        let img1 = document.getElementById("cat1");
+        let img2 = document.getElementById("cat2");
+        let img3 = document.getElementById("cat3");
+        let img4 = document.getElementById("cat4");
+        let img5 = document.getElementById("cat5");
+        if (img1.alt === "cat1" && img2.alt === "cat2" && img3.alt === "cat3" && img4.alt === "cat4" && img5.alt === "cat5"){
+            alert("Anh da hoan thanh")}
+    }
+</script>
+</body>
+</html>
